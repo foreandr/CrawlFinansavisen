@@ -123,9 +123,11 @@ async def get_single_page_data():
     browser = await hyperSel.nodriver_utilities.open_nodriver(headless=False, proxy=None, max_attempts=3)
 
     # Define URL template and call the scraping function asynchronously
-    url_template = "https://www.finansavisen.no/forum/thread/165943/view/0/0?page=$$$"
+    # https://www.finansavisen.no/forum/thread/165943/view/0/0?page=$$$
+    # https://secure.lni.wa.gov/verify/Results.aspx#%7B%22pageNumber%22%3A0%2C%22SearchType%22%3A2%2C%22SortColumn%22%3A%22Rank%22%2C%22SortOrder%22%3A%22desc%22%2C%22pageSize%22%3A10%2C%22ContractorTypeFilter%22%3A%5B%5D%2C%22SessionID%22%3A%22zp3io2zc3cp3dgjgomf1jo35%22%2C%22SAW%22%3A%22%22%2C%22Name%22%3A%22Last%20name%20or%20business%20name%22%2C%22searchCat%22%3A%22Name%22%2C%22searchText%22%3A%22Last%20name%20or%20business%20name%22%2C%22firstSearch%22%3A1%7D
+    url_template = "https://www.chewy.com/"
     result = await scrape_all_content_from_specific_post(browser, url_template)  # Capture returned value
-
+    input("--")
     hyperSel.nodriver_utilities.custom_kill_browser(browser)
     return result  # Return "hello world"
 
